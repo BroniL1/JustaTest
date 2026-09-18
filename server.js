@@ -191,7 +191,7 @@ const server = http.createServer((req, res) => {
     return sendJson(res, 405, { error: "Method not allowed." });
   }
 
-  if (req.method === "GET" && STATIC_FILES[url.pathname]) {
+  if ((req.method === "GET" || req.method === "HEAD") && STATIC_FILES[url.pathname]) {
     return serveStatic(res, STATIC_FILES[url.pathname]);
   }
 
