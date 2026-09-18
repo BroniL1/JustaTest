@@ -19,13 +19,16 @@
         <p>Room: general</p>
       </div>
       <div class="actions">
+        <span class="status" id="status" role="status" data-state="connecting">
+          <span class="dot" aria-hidden="true"></span>
+          <span id="status-text">Connecting</span>
+        </span>
         <button type="button" class="btn-ghost" id="rename-btn">Change name</button>
-        <button type="button" class="btn-ghost" id="clear-btn">Clear chat</button>
       </div>
     </header>
 
     <section class="messages" id="messages" role="log" aria-live="polite" aria-label="Messages">
-      <p class="empty" id="empty">No messages yet. Type below and press Enter to send.</p>
+      <p class="empty" id="empty">No messages yet. Say hello to anyone who has this link.</p>
     </section>
 
     <form class="composer" id="composer" autocomplete="off">

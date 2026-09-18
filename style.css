@@ -7,6 +7,10 @@
   --cobalt: #2a3fd9;
   --cobalt-dark: #1f30b0;
 
+  --ok: #1f9d55;
+  --wait: #c58a00;
+  --bad: #c0392b;
+
   --font-display: "Bricolage Grotesque", system-ui, sans-serif;
   --font-body: "Instrument Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
 }
@@ -91,7 +95,33 @@ body {
 
 .actions {
   display: flex;
-  gap: 4px;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 4px 8px;
+}
+
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.status .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--wait);
+}
+
+.status[data-state="online"] .dot {
+  background: var(--ok);
+}
+
+.status[data-state="offline"] .dot {
+  background: var(--bad);
 }
 
 .btn-ghost {

@@ -1,0 +1,9 @@
+{
+  "name": "commons",
+  "version": "2.0.0",
+  "description": "A simple shared chat room",
+  "private": true,
+  "scripts": {
+    "start": "node server.js"
+  }
+}

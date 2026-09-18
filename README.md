@@ -1,21 +1,24 @@
 # Commons
 
-A simple chat app built with plain HTML, CSS and JavaScript.
+A simple chat app: plain HTML, CSS and JavaScript in the browser, plus a small Node.js server.
 
-## Version 1 (current)
-- Single room, runs fully in the browser
-- Messages are saved in `localStorage`
-- A placeholder "Echo" bot replies so you can see both sides of a chat
+## Version 2 (current)
+- One shared room: everyone with the link sees the same messages
+- Messages are kept on the server and saved to `messages.json`
+- No packages to install; the server uses only Node.js built-ins (Node 18 or newer)
 
-## Run locally
-Open `index.html` in a browser, or from this folder run:
+## Run
+    node server.js
 
-    python3 -m http.server 8080
+Then open http://localhost:8080 (set another port with `PORT=3000 node server.js`).
 
-then visit http://localhost:8080
+## Update on the server
+    pkill -f "node server.js"
+    git pull
+    setsid nohup node server.js > server.log 2>&1 &
 
 ## Planned upgrades
-- Node.js + WebSocket server for real multi-user chat
+- WebSockets for instant delivery
 - Multiple rooms
-- Message history in a database
-- Login
+- Logins
+- A database instead of messages.json
